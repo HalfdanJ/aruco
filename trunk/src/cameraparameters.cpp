@@ -98,7 +98,7 @@ cv::Point3f CameraParameters::getCameraLocation(cv::Mat Rvec,cv::Mat Tvec)
 
     //now, add translation information
     for (int i=0;i<3;i++)
-        m44.at<float>(i,3)=Tvec.at<float>(0,i);
+        m44.at<float>(i,3)=Tvec.at<float>(i,0);
     //invert the matrix
     m44.inv();
     return  cv::Point3f( m44.at<float>(0,0),m44.at<float>(0,1),m44.at<float>(0,2));
